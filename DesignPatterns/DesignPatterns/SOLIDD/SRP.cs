@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using static System.Console;
 
-namespace DotNetDesignPatternDemos.SOLID.SRP
+namespace DesignPatterns.SOLID
 {
   // just stores a couple of journal entries and ways of
   // working with them
@@ -54,22 +53,6 @@ namespace DotNetDesignPatternDemos.SOLID.SRP
     {
       if (overwrite || !File.Exists(filename))
         File.WriteAllText(filename, journal.ToString());
-    }
-  }
-
-  public class Demo
-  {
-    static void Main(string[] args)
-    {
-      var j = new Journal();
-      j.AddEntry("I cried today.");
-      j.AddEntry("I ate a bug.");
-      WriteLine(j);
-
-      var p = new Persistence();
-      var filename = @"c:\temp\journal.txt";
-      p.SaveToFile(j, filename);
-      Process.Start(filename);
     }
   }
 }

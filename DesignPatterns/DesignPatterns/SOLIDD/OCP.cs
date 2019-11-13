@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using static System.Console;
 
-namespace DotNetDesignPatternDemos.SOLID.OCP
+namespace DesignPatterns.SOLID
 {
   public enum Color
   {
@@ -58,17 +58,17 @@ namespace DotNetDesignPatternDemos.SOLID.OCP
 
   // we introduce two new interfaces that are open for extension
 
-  public interface ISpecification<T>
+  public interface ISpecification
   {
     bool IsSatisfied(Product p);
   }
 
   public interface IFilter<T>
   {
-    IEnumerable<T> Filter(IEnumerable<T> items, ISpecification<T> spec);
+    IEnumerable<T> Filter(IEnumerable<T> items, ISpecification spec);
   }
 
-  public class ColorSpecification : ISpecification<Product>
+  public class ColorSpecification : ISpecification
   {
     private Color color;
 
@@ -83,7 +83,7 @@ namespace DotNetDesignPatternDemos.SOLID.OCP
     }
   }
 
-  public class SizeSpecification : ISpecification<Product>
+  public class SizeSpecification : ISpecification
   {
     private Size size;
 
@@ -99,11 +99,11 @@ namespace DotNetDesignPatternDemos.SOLID.OCP
   }
 
   // combinator
-  public class AndSpecification<T> : ISpecification<T>
+  public class AndSpecification : ISpecification
   {
-    private ISpecification<T> first, second;
+    private ISpecification first, second;
 
-    public AndSpecification(ISpecification<T> first, ISpecification<T> second)
+    public AndSpecification(ISpecification first, ISpecification second)
     {
       this.first = first ?? throw new ArgumentNullException(paramName: nameof(first));
       this.second = second ?? throw new ArgumentNullException(paramName: nameof(second));
@@ -117,48 +117,11 @@ namespace DotNetDesignPatternDemos.SOLID.OCP
 
   public class BetterFilter : IFilter<Product>
   {
-    public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification<Product> spec)
+    public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification spec)
     {
       foreach (var i in items)
         if (spec.IsSatisfied(i))
           yield return i;
-    }
-  }
-
-  public class Demo
-  {
-    static void Main(string[] args)
-    {
-      var apple = new Product("Apple", Color.Green, Size.Small);
-      var tree = new Product("Tree", Color.Green, Size.Large);
-      var house = new Product("House", Color.Blue, Size.Large);
-
-      Product[] products = {apple, tree, house};
-
-      var pf = new ProductFilter();
-      WriteLine("Green products (old):");
-      foreach (var p in pf.FilterByColor(products, Color.Green))
-        WriteLine($" - {p.Name} is green");
-
-      // ^^ BEFORE
-
-      // vv AFTER
-      var bf = new BetterFilter();
-      WriteLine("Green products (new):");
-      foreach (var p in bf.Filter(products, new ColorSpecification(Color.Green)))
-        WriteLine($" - {p.Name} is green");
-
-      WriteLine("Large products");
-      foreach (var p in bf.Filter(products, new SizeSpecification(Size.Large)))
-        WriteLine($" - {p.Name} is large");
-
-      WriteLine("Large blue items");
-      foreach (var p in bf.Filter(products,
-        new AndSpecification<Product>(new ColorSpecification(Color.Blue), new SizeSpecification(Size.Large)))
-      )
-      {
-        WriteLine($" - {p.Name} is big and blue");
-      }
     }
   }
 }
