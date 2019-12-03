@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creationals\Builder\CreationalBuilder.cs" />
+    <Compile Include="Creationals\Builder\CreationalBuilderInheritance.cs" />
+    <Compile Include="Creationals\Builder\FacetedBuilder.cs" />
+    <Compile Include="Creationals\Builder\FinalBuilder.cs" />
+    <Compile Include="Creationals\Builder\FunctionalBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SOLIDD\DIP.cs" />
@@ -58,5 +63,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

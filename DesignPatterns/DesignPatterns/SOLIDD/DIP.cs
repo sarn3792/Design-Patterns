@@ -45,6 +45,11 @@ namespace DesignPatterns.SOLID
               .Where(x => x.Item1.Name == name
                           && x.Item2 == Relationship.Parent).Select(r => r.Item3);
         }
+
+        internal void AddParentAndChild(DesignPatterns.Person parent, DesignPatterns.Person child1)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Research
