@@ -164,10 +164,20 @@ namespace DesignPatterns
             */
             #endregion
             #region FinalBuilder
+            /*
             var builder = new CodeBuilder("Date");
             builder.AddField("year", "int").AddField("month", "string");
             Console.WriteLine(builder.ToString());
+            */
             #endregion
+            #endregion
+            #region Factory
+            var machine = new HotDrinkMachine();
+            //var drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 300);
+            //drink.Consume();
+
+            IHotDrink drink = machine.MakeDrink();
+            drink.Consume();
             #endregion
             #endregion
             Console.ReadKey();
