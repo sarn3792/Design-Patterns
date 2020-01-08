@@ -162,6 +162,7 @@ namespace DesignPatterns
 
             WriteLine(person);
             */
+
             #endregion
             #region FinalBuilder
             /*
@@ -172,12 +173,30 @@ namespace DesignPatterns
             #endregion
             #endregion
             #region Factory
+            /*
             var machine = new HotDrinkMachine();
             //var drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 300);
             //drink.Consume();
 
             IHotDrink drink = machine.MakeDrink();
             drink.Consume();
+            */
+            #endregion
+            #region Prototype
+            /*
+            var line1 = new Line
+            {
+                Start = new Point { X = 3, Y = 3 },
+                End = new Point { X = 10, Y = 10 }
+            };
+            */
+            #endregion
+            #region Singleton
+            var db = SingletonDatabase.Instance;
+
+            // works just fine while you're working with a real database.
+            var city = "Tokyo";
+            WriteLine($"{city} has population {db.GetPopulation(city)}");
             #endregion
             #endregion
             Console.ReadKey();
