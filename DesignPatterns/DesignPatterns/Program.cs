@@ -192,12 +192,74 @@ namespace DesignPatterns
             */
             #endregion
             #region Singleton
+            /*
             var db = SingletonDatabase.Instance;
-
-            // works just fine while you're working with a real database.
             var city = "Tokyo";
             WriteLine($"{city} has population {db.GetPopulation(city)}");
+            */
             #endregion
+            #endregion
+
+            #region Structurals
+
+            #region Adapter
+            #region NoCaching
+            /*
+            DesignPatterns.Structurals.Demo.Draw();
+            DesignPatterns.Structurals.Demo.Draw();
+            */
+            #endregion
+
+            #region Caching
+            /*
+            DesignPatterns.Structurals.WithCaching.Demo.Draw();
+            DesignPatterns.Structurals.WithCaching.Demo.Draw();
+            */
+            #endregion
+
+            #region Generic
+            /*
+            var v = new DesignPatterns.Structurals.Generic.Vector2i(1, 2);
+            v[0] = 0;
+
+            var vv = new DesignPatterns.Structurals.Generic.Vector2i(3, 2);
+
+            var result = v + vv;
+
+            DesignPatterns.Structurals.Generic.Vector3f u = DesignPatterns.Structurals.Generic.Vector3f.Create(3.5f, 2.2f, 1);
+            */
+            #endregion
+
+            #region DI
+            // for each ICommand, a ToolbarButton is created to wrap it, and all
+            // are passed to the editor
+            /*
+            var b = new ContainerBuilder();
+            b.RegisterType<OpenCommand>()
+              .As<ICommand>()
+              .WithMetadata("Name", "Open");
+            b.RegisterType<SaveCommand>()
+              .As<ICommand>()
+              .WithMetadata("Name", "Save");
+            //b.RegisterType<Button>();
+            b.RegisterAdapter<ICommand, Button>(cmd => new Button(cmd, ""));
+            b.RegisterAdapter<Meta<ICommand>, Button>(cmd =>
+              new Button(cmd.Value, (string)cmd.Metadata["Name"]));
+            b.RegisterType<Editor>();
+            using (var c = b.Build())
+            {
+                var editor = c.Resolve<Editor>();
+                editor.ClickAll();
+
+                // problem: only one button
+
+                foreach (var btn in editor.Buttons)
+                    btn.PrintMe();
+            }
+            */
+            #endregion
+            #endregion
+
             #endregion
             Console.ReadKey();
         }

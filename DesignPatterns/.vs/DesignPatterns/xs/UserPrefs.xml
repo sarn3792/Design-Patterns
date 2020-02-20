@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{8D432227-9CBB-4EF6-8E76-DAFFE2249BF4}|Default">
+  <MonoDevelop.Ide.ItemProperties.DesignPatterns PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/Structurals/Adapter/StructuralAdapterGenericValueAdapter.cs">
+    <Files>
+      <File FileName="DesignPatterns/Program.cs" Line="232" Column="1" />
+      <File FileName="DesignPatterns/Structurals/Adapter/StructuralAdapterNoCaching.cs" Line="9" Column="11" NotebookId="1" />
+      <File FileName="DesignPatterns/Structurals/Adapter/StructuralAdapterWithCaching.cs" Line="10" Column="49" NotebookId="1" />
+      <File FileName="DesignPatterns/Structurals/Adapter/StructuralAdapterGenericValueAdapter.cs" Line="4" Column="45" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DesignPatterns" expanded="True">
+            <Node name="DesignPatterns" expanded="True">
+              <Node name="Creationals" expanded="True">
+                <Node name="Singleton" expanded="True" />
+              </Node>
+              <Node name="Structurals" expanded="True">
+                <Node name="Adapter" expanded="True">
+                  <Node name="StructuralAdapterGenericValueAdapter.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
