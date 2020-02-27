@@ -2,28 +2,12 @@
   <MonoDevelop.Ide.ItemProperties.DesignPatterns PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/Structurals/Bridge/Bridge.cs">
     <Files>
-      <File FileName="DesignPatterns/Program.cs" Line="205" Column="13" />
+      <File FileName="DesignPatterns/Program.cs" Line="264" Column="142" />
       <File FileName="DesignPatterns/Structurals/Adapter/StructuralAdapterNoCaching.cs" Line="9" Column="11" NotebookId="1" />
       <File FileName="DesignPatterns/Structurals/Adapter/StructuralAdapterWithCaching.cs" NotebookId="1" />
       <File FileName="DesignPatterns/Structurals/Adapter/StructuralAdapterGenericValueAdapter.cs" NotebookId="1" />
-      <File FileName="DesignPatterns/Structurals/Bridge/Bridge.cs" Line="40" Column="32" NotebookId="1" />
+      <File FileName="DesignPatterns/Structurals/Bridge/Bridge.cs" Line="30" Column="31" NotebookId="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="DesignPatterns" expanded="True">
-            <Node name="DesignPatterns" expanded="True">
-              <Node name="Structurals" expanded="True">
-                <Node name="Adapter" expanded="True" />
-                <Node name="Bridge" expanded="True">
-                  <Node name="Bridge.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

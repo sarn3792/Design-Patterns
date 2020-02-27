@@ -260,6 +260,11 @@ namespace DesignPatterns
             #endregion
             #endregion
 
+            #region Bridge
+            Console.WriteLine(new DesignPatterns.Structurals.Bridge.Square(new DesignPatterns.Structurals.Bridge.VectorRenderer()).ToString());
+            Console.WriteLine(new DesignPatterns.Structurals.Bridge.Triangle(new DesignPatterns.Structurals.Bridge.RasterRenderer()).ToString());
+            #endregion
+
             #endregion
             Console.ReadKey();
         }
